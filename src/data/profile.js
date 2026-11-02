@@ -44,10 +44,10 @@ export const lenses = [
     name: 'Software Engineering',
     short: 'SWE',
     title: 'Building things that *ship*.',
-    text: 'Three years at Wells Fargo taking a greenfield application from pitch to production: system design, code ownership and the data pipelines underneath.',
+    text: 'Three years at Wells Fargo in market surveillance. Took a greenfield application from pitch to production by owning the system design, the code and the data pipelines underneath.',
     proof: [
       ['Tech lead of a 6-engineer greenfield platform', 'Wells Fargo'],
-      ['Releases: quarterly → bi-weekly, zero downtime', 'Harness · OpenShift'],
+      ['Quarterly → bi-weekly releases, zero downtime', 'Harness · OpenShift'],
       ['Fault-tolerant workflows with retries & DLQs', 'Kafka'],
     ],
   },
@@ -58,7 +58,7 @@ export const lenses = [
     title: 'Decoding the *brain*.',
     text: 'Published research on reconstructing what people imagine from EEG, and on generating language from fMRI with large language models.',
     proof: [
-      ['MindCeive: CNN-BiGRU + GANs', 'Elsevier BSPC'],
+      ['MindCeive, built on CNN-BiGRU + GANs', 'Elsevier BSPC'],
       ['Decoding EEG Signals to Generate Images', 'CRC Press'],
       ['Narratives fMRI-to-text with LLaMA3', 'PyTorch · CLIP'],
     ],
@@ -68,7 +68,7 @@ export const lenses = [
     name: 'Quant & Markets',
     short: 'Quant',
     title: 'Close to the *markets*.',
-    text: 'Market surveillance on FX and fixed-income derivatives (swaps, options, forwards), where correctness and latency both matter. I enjoy the maths behind it: time series, signals and risk.',
+    text: 'Market surveillance on FX and fixed-income derivatives (swaps, options, forwards), where correctness and latency both matter. I enjoy the maths behind it, especially time series, signals and risk.',
     proof: [
       ['15M+ market records a day from 30+ sources', 'OneTick · Postgres'],
       ['End-to-end pipeline latency cut by 40%', 'Python · Pandas'],
@@ -80,11 +80,11 @@ export const lenses = [
     name: 'Systems',
     short: 'Systems',
     title: 'Down to the *metal*.',
-    text: 'I like knowing how things work underneath: threads, sockets, GPUs, and where the compute actually goes when a model serves a token.',
+    text: 'I like knowing how things work underneath, from threads and sockets to GPUs and where the compute actually goes when a model serves a token.',
     proof: [
       ['Prefill–decode disaggregation, LLaMA3-8B on 2 GPUs', 'PyTorch'],
-      ['MRThread: threading library in C', 'one-one · many-one'],
-      ['BlueHawk: HTTP/1.1 server on raw sockets', 'Python'],
+      ['MRThread, a threading library in C', 'one-one · many-one'],
+      ['BlueHawk, an HTTP/1.1 server on raw sockets', 'Python'],
     ],
   },
   {
@@ -161,7 +161,7 @@ export const projects = [
       authors: 'Ritik Naik, Kunal Chaudhari, Ketaki Jadhav, Amit Joshi',
       summary: 'Can we see what someone is imagining? MindCeive records EEG while a person imagines real-world objects, encodes those signals with a new CNN + Bi-GRU network, and uses a GAN to generate an image of the object they had in mind.',
       highlights: [
-        'Hybrid encoder: CNN layers capture spatial patterns across EEG electrodes, a bidirectional GRU captures how they evolve over time',
+        'A hybrid encoder where CNN layers capture spatial patterns across EEG electrodes and a bidirectional GRU captures how they evolve over time',
         'A new GAN architecture conditioned on the learned EEG embedding generates the imagined object',
         'Extends the earlier digit / character work to real-world object categories',
       ],
@@ -183,7 +183,7 @@ export const projects = [
     details: {
       kind: 'Book chapter',
       authors: 'Ritik Naik, Kunal Chaudhari, Ketaki Jadhav, Amit Joshi',
-      summary: 'The first step of the research line: given EEG recorded while a person imagines a digit or a character, reconstruct an image of it. The model is a self-designed pipeline of an EEG encoder, CNNs and a GAN.',
+      summary: 'The first step of the research line. Given EEG recorded while a person imagines a digit or a character, the model reconstructs an image of it with a self-designed pipeline of an EEG encoder, CNNs and a GAN.',
       highlights: [
         'Encoder turns raw multi-channel EEG into a compact latent representation',
         'GAN generator decodes that latent into an image of the imagined digit or character',
@@ -207,8 +207,8 @@ export const projects = [
       kind: 'Systems prototype',
       summary: 'A prototype and benchmark of prefill–decode disaggregation, the technique behind serving systems like DistServe. Instead of encoding the prompt and generating tokens on one GPU stream, the two phases run as independent workers so they can overlap.',
       highlights: [
-        'Two modes: monolithic model.generate() vs. split prefill / decode workers connected by multiprocessing queues',
-        'DistServe-style metrics measured identically in both modes: TTFT (time to first token) and TPOT (time per output token)',
+        'Compares a monolithic model.generate() against split prefill / decode workers connected by multiprocessing queues',
+        'Measures DistServe-style metrics, TTFT (time to first token) and TPOT (time per output token), identically in both modes',
         '10 prompt workloads covering every light / heavy prefill × decode combination, from Q&A to long-document generation',
         'Compares TTFT, TPOT and decode tokens per second side by side',
       ],
@@ -244,15 +244,15 @@ export const projects = [
     link: { label: 'Internal' },
     details: {
       kind: 'Wells Fargo · 2023–26',
-      summary: 'Technical lead for a greenfield microservices application in Investment Banking Technology: from the initial pitch and system design through development and ownership of the code repository.',
+      summary: 'Technical lead for a greenfield microservices application in Investment Banking Technology, from the initial pitch and system design through development and ownership of the code repository.',
       highlights: [
-        'Led a team of six engineers; pitched features to stakeholders and presented the design to the Chief Architect',
+        'Led a team of six engineers, pitched features to stakeholders and presented the design to the Chief Architect',
         'Multi-stage workflow state machine decoupled over Kafka, with retry and dead-letter-queue strategies',
         'OAuth2 / OIDC authentication via PingFederate with role-based access control',
-        'Harness CI/CD to OpenShift with zero-downtime rollouts: quarterly → bi-weekly releases',
+        'Harness CI/CD to OpenShift with zero-downtime rollouts, taking releases from quarterly to bi-weekly',
       ],
       tags: ['Microservices', 'Kafka', 'OpenShift', 'OAuth2 / OIDC', 'Harness'],
-      note: 'Internal project: code and further details are confidential.',
+      note: 'Internal project. Code and further details are confidential.',
     },
   },
   {
@@ -266,7 +266,7 @@ export const projects = [
       kind: 'Operating Systems course project',
       summary: 'A userland multithreading library written from scratch in C on top of system calls, exposing a pthreads-like API.',
       highlights: [
-        'Two threading models you pick at compile time: one-one (each user thread on a kernel thread) and many-one (user threads scheduled onto a single kernel thread)',
+        'Two threading models chosen at compile time, one-one (each user thread on a kernel thread) and many-one (user threads scheduled onto a single kernel thread)',
         'Include mrthread.h and compile against either implementation',
         'Automated test script covering every thread function plus sample applications',
       ],
@@ -286,7 +286,7 @@ export const projects = [
       summary: 'An HTTP/1.1 web server built on raw sockets, following RFC 2616.',
       highlights: [
         'Implements GET, POST, PUT, DELETE and HEAD with proper status codes and conditional headers',
-        'Multithreaded: serves parallel connections up to a configurable limit',
+        'Multithreaded, serving parallel connections up to a configurable limit',
         'Configurable document root, port, timeout, max connections and keep-alive',
         'Automated test suite compares expected vs. received responses, including concurrent requests',
       ],
@@ -325,7 +325,7 @@ export const projects = [
       highlights: [
         'Smart contracts in Solidity, managed with Truffle',
         'React front end talking to the chain through Web3.js',
-        'Users sign in with a MetaMask wallet; includes profile customisation',
+        'Users sign in with a MetaMask wallet and can customise their profile',
       ],
       tags: ['Solidity', 'React', 'Web3.js', 'Truffle', 'MetaMask'],
       links: [{ label: 'View on GitHub', href: 'https://github.com/ritiknaik/Samvad' }],
@@ -344,7 +344,7 @@ export const projects = [
       highlights: [
         'Syntax highlighting for C, Java, JavaScript and Python',
         'Incremental search and a stack-based undo',
-        'Raw terminal handling with termios: no curses, no dependencies',
+        'Raw terminal handling with termios, with no curses and no other dependencies',
       ],
       tags: ['C', 'termios', 'Data structures', 'Terminal'],
       links: [{ label: 'View on GitHub', href: 'https://github.com/ritiknaik/Coditor' }],
