@@ -14,6 +14,8 @@ export const person = {
     'paint when the code compiles.',
   ],
   bio: 'MS CS student at Texas A&M. Previously a Software Engineer in Investment Banking Technology at Wells Fargo, where I led a greenfield microservices platform. I work at the intersection of systems and AI, from serving multimodal LLMs faster to decoding brain signals into images and text.',
+  // Shown instead of `bio` on phones so the buttons fit on the first screen.
+  bioShort: 'MS CS student at Texas A&M, previously a Software Engineer at Wells Fargo. I build across systems, AI and markets.',
   photo: 'images/about/portrait-side.png',
   email: 'ritiknaik23@gmail.com',
   location: 'College Station, Texas',

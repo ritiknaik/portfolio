@@ -49,6 +49,22 @@
   font-size: 11px;
 }
 
+/* "Show more" exists only on phones */
+.job-more { display: none; }
+
 @media (max-width: 700px) {
   .job { grid-template-columns: 1fr; gap: 6px; }
+  .job:not(.open) .job-points .extra { display: none; }
+  .job-more {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 14px;
+    padding: 0;
+    border: none;
+    background: none;
+    color: var(--accent);
+    font: 600 14px var(--font-head);
+    cursor: pointer;
+  }
 }

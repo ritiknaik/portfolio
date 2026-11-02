@@ -133,8 +133,15 @@
   .tagline { min-height: 2.6em; }
 }
 
+/* Phones: everything down to the social icons fits on the first screen */
 @media (max-width: 640px) {
-  .hero { padding-top: calc(var(--nav-h) + 24px); }
-  .hero-grid { grid-template-columns: 1fr; gap: 24px; }
-  .portrait { order: -1; max-width: 220px; justify-self: center; }
+  .hero { padding-top: calc(var(--nav-h) + 12px); }
+  .hero-grid { grid-template-columns: 1fr; gap: 12px; }
+  .portrait { order: -1; max-width: 150px; justify-self: center; }
+  .open-to { margin-bottom: 4px; }
+  .eyebrow { display: none; }
+  .hero h1 { margin: 10px 0 6px; }
+  .tagline { margin-bottom: 12px; }
+  .bio { font-size: 16px; margin-bottom: 20px; }
+  .cta { gap: 10px; }
 }

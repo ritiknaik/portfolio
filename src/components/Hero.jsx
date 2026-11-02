@@ -1,23 +1,25 @@
 import SignalLine from './SignalLine';
 import SocialLinks from './SocialLinks';
 import useTypewriter from '../hooks/useTypewriter';
+import useMediaQuery from '../hooks/useMediaQuery';
 import { lenses, person } from '../data/profile';
 import { asset } from '../utils';
 import './Hero.css';
 
 export default function Hero() {
   const typed = useTypewriter(person.typed);
+  const phone = useMediaQuery('(max-width: 640px)');
   return (
     <header className="hero" id="top">
       <div className="wrap hero-grid">
         <div className="hero-text">
           <a className="open-to" href="#contact"><i />{person.openTo}<span aria-hidden="true">→</span></a>
-          <p className="mono">{person.eyebrow}</p>
+          <p className="mono eyebrow">{person.eyebrow}</p>
           <h1>{person.name}</h1>
           <p className="tagline" aria-label={`I ${person.typed[0]}`}>
             I <span className="typed">{typed}</span><span className="caret" aria-hidden="true" />
           </p>
-          <p className="bio">{person.bio}</p>
+          <p className="bio">{phone ? person.bioShort : person.bio}</p>
           <div className="cta">
             <a className="btn primary" href="#work">See my work</a>
             <a className="btn" href={person.resume} target="_blank" rel="noopener noreferrer">Résumé ↗</a>

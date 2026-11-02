@@ -41,9 +41,33 @@
 .edu-place { margin-top: 4px; font: 600 15px var(--font-head); color: var(--accent); }
 .edu-note { margin-top: 6px; font-size: 14.5px; color: var(--muted); }
 
+/* Education / Leadership switch, phones only */
+.edu-switch { display: none; }
+
 @media (max-width: 800px) {
-  .edu-grid { grid-template-columns: 1fr; gap: 40px; }
+  .edu-grid { grid-template-columns: 1fr; }
   .edu-grid > div,
   .edu-list { grid-row: auto; grid-template-rows: none; }
-  .edu-col { margin-bottom: 16px; }
+  .edu-grid > .m-hide,
+  .edu-col { display: none; }
+
+  .edu-switch {
+    display: flex;
+    margin-bottom: 18px;
+    padding: 4px;
+    border-radius: 12px;
+    background: var(--surface-2);
+  }
+  .edu-switch button {
+    flex: 1;
+    padding: 9px 0;
+    border: none;
+    border-radius: 9px;
+    background: transparent;
+    color: var(--muted);
+    font: 600 14px var(--font-head);
+    cursor: pointer;
+    transition: background-color 0.25s, color 0.25s;
+  }
+  .edu-switch button.on { background: var(--surface); color: var(--text); box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12); }
 }
