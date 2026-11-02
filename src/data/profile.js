@@ -23,6 +23,7 @@ export const person = {
     { label: 'Email', icon: 'mail', href: 'mailto:ritiknaik23@gmail.com' },
     { label: 'LinkedIn', icon: 'linkedin', href: 'https://www.linkedin.com/in/ritik-naik-a207551b2/' },
     { label: 'GitHub', icon: 'github', href: 'https://github.com/ritiknaik' },
+    { label: 'Google Scholar', icon: 'scholar', href: 'https://scholar.google.com/citations?user=yGlfhEwAAAAJ&hl=en' },
   ],
 };
 

@@ -77,7 +77,6 @@
 .bio { max-width: 540px; color: var(--muted); font-size: 17px; margin-bottom: 32px; }
 
 .cta { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
-.cta .socials { margin-left: 4px; }
 
 /* Portrait: cut-out photo on a soft arch so it sits on either theme */
 .portrait {
