@@ -1,6 +1,6 @@
 import './ProjectArt.css';
 
-// Hand-drawn SVG cover art for project cards. 320×180 canvas, coloured with theme tokens
+// Hand-drawn SVG cover art for project cards. 320×180 canvas, colored with theme tokens
 // so every illustration works in both day and night mode.
 
 const T = ({ x, y, children, ...rest }) => <text x={x} y={y} {...rest}>{children}</text>;

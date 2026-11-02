@@ -7,7 +7,7 @@
   background: var(--surface);
 }
 
-/* Hairlines between groups without exposing a coloured gap in empty grid cells */
+/* Hairlines between groups without exposing a colored gap in empty grid cells */
 .skill-group { padding: 24px; box-shadow: 1px 0 0 var(--line), 0 1px 0 var(--line); }
 .skill-group h3 { margin-bottom: 16px; }
 .skill-group ul { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; list-style: none; }

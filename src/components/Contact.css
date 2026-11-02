@@ -3,6 +3,8 @@
 .contact-text { max-width: 520px; margin: 0 auto 32px; color: var(--muted); text-wrap: balance; }
 .contact-cta { justify-content: center; margin-bottom: 28px; }
 .contact .socials { justify-content: center; }
+.contact-location { display: inline-flex; align-items: center; gap: 8px; margin-top: 28px; }
+.contact-location svg { color: var(--accent); }
 
 .footer { padding: 24px 0; border-top: 1px solid var(--line); }
 .footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }

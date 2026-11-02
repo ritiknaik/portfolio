@@ -20,7 +20,7 @@ Images are served from `public/images/`. Wrap a word in `*asterisks*` in a headi
 
 - `src/components/`: one component (and its CSS) per section
 - `src/components/LensScenes.jsx`: the scroll-driven SVG graphics
-- `src/styles/global.css`: colour tokens for night/day themes, fonts, shared styles
+- `src/styles/global.css`: color tokens for night/day themes, fonts, shared styles
 
 ## Deploy
 

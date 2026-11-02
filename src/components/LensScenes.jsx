@@ -95,7 +95,7 @@ function AiScene() {
 
 const CANDLES = (() => {
   const r = rng(11);
-  // Lower y is a higher price in SVG, so a negative drift trends towards profit.
+  // Lower y is a higher price in SVG, so a negative drift trends toward profit.
   let p = 190;
   return Array.from({ length: 16 }, (_, i) => {
     const o = p;

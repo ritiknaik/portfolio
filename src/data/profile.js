@@ -16,6 +16,7 @@ export const person = {
   bio: 'MS CS student at Texas A&M. Previously a Software Engineer in Investment Banking Technology at Wells Fargo, where I led a greenfield microservices platform. I work at the intersection of systems and AI, from serving multimodal LLMs faster to decoding brain signals into images and text.',
   photo: 'images/about/portrait-side.png',
   email: 'ritiknaik23@gmail.com',
+  location: 'College Station, Texas',
   resume: 'https://drive.google.com/file/d/1Y1lYofOmeROaP95eS2S-nsU86VOHdcdf/view?usp=sharing',
   // `icon` picks an icon from SocialLinks.jsx.
   socials: [
@@ -68,7 +69,7 @@ export const lenses = [
     name: 'Quant & Markets',
     short: 'Quant',
     title: 'Close to the *markets*.',
-    text: 'Market surveillance on FX and fixed-income derivatives (swaps, options, forwards), where correctness and latency both matter. I enjoy the maths behind it, especially time series, signals and risk.',
+    text: 'Market surveillance on FX and fixed-income derivatives (swaps, options, forwards), where correctness and latency both matter. I enjoy the math behind it, especially time series, signals and risk.',
     proof: [
       ['15M+ market records a day from 30+ sources', 'OneTick · Postgres'],
       ['End-to-end pipeline latency cut by 40%', 'Python · Pandas'],
@@ -115,7 +116,7 @@ export const experience = [
         points: [
           'Led a team of *six engineers* architecting a greenfield microservices platform in Agile sprints; pitched features to business stakeholders and presented the design to the business’s Chief Architect.',
           'Built it with Java, Spring Boot, Kafka and React + TypeScript using agentic AI coding tools with MCP servers, while reviewing AI-generated code and owning Git, code reviews and JUnit / Jest tests.',
-          'Designed *20+ REST APIs* and a cross-system database schema with strict validation, standardised error handling and audit triggers, reaching *~100% audit coverage*.',
+          'Designed *20+ REST APIs* and a cross-system database schema with strict validation, standardized error handling and audit triggers, reaching *~100% audit coverage*.',
         ],
       },
       {
@@ -136,7 +137,7 @@ export const experience = [
     groups: [
       {
         points: [
-          'Built a real-time trading suggestion platform in React that visualises live market data and algorithmic trade signals.',
+          'Built a real-time trading suggestion platform in React that visualizes live market data and algorithmic trade signals.',
           'Wrote the Flask backend computing *15+ technical indicators* (MACD, RSI, Bollinger Bands).',
         ],
       },
@@ -150,7 +151,7 @@ export const experience = [
 export const projects = [
   {
     title: 'MindCeive: Perceiving human imagination',
-    text: 'Novel CNN-BiGRU architecture with a new GAN to visualise imagined real-world objects from EEG.',
+    text: 'Novel CNN-BiGRU architecture with a new GAN to visualize imagined real-world objects from EEG.',
     image: 'images/projects/bspc.png',
     lenses: ['ai'],
     stack: 'PyTorch · GANs',
@@ -267,7 +268,7 @@ export const projects = [
       summary: 'This very site. A rebuild of an older multi-page portfolio into one fast, static page with no backend, designed and drawn by hand and deployed to both GitHub Pages and Netlify from the same build.',
       highlights: [
         'Vite and React with plain CSS custom properties, so the day and night themes are a single attribute swap',
-        'Every project cover and lens scene is a hand-written SVG coloured with theme tokens, so each one works in both themes',
+        'Every project cover and lens scene is a hand-written SVG colored with theme tokens, so each one works in both themes',
         'Scroll-driven navigation with an IntersectionObserver scrollspy, reveal animations and a sticky browser-tab card',
         'Beat the Market mini-game with 12 simulated market scenarios, from bull runs to flash crashes',
         'All content lives in one data file, and a GitHub Actions workflow builds and deploys on every push',
@@ -338,7 +339,7 @@ export const projects = [
   },
   {
     title: 'Samvad',
-    text: 'Blockchain-ledger messaging dApp with a secure platform and profile customisation.',
+    text: 'Blockchain-ledger messaging dApp with a secure platform and profile customization.',
     art: 'samvad',
     lenses: ['swe'],
     stack: 'Solidity · React · Web3.js',
@@ -349,7 +350,7 @@ export const projects = [
       highlights: [
         'Smart contracts in Solidity, managed with Truffle',
         'React front end talking to the chain through Web3.js',
-        'Users sign in with a MetaMask wallet and can customise their profile',
+        'Users sign in with a MetaMask wallet and can customize their profile',
       ],
       tags: ['Solidity', 'React', 'Web3.js', 'Truffle', 'MetaMask'],
       links: [{ label: 'View on GitHub', href: 'https://github.com/ritiknaik/Samvad' }],
@@ -394,7 +395,7 @@ export const projects = [
   },
 ];
 
-// `color` is a theme colour token used for the group heading.
+// `color` is a theme color token used for the group heading.
 export const skills = [
   { color: 'systems', title: 'Languages', items: [['C', 'cnew2.png'], ['C++', 'cppnew.png'], ['Java', 'java.png'], ['Python', 'python.png'], ['JavaScript', 'js.png'], ['TypeScript', 'typescript.png'], ['Solidity', 'solidity_pro.png']] },
   { color: 'swe', title: 'SWE frameworks & tools', items: [['Spring Boot', 'spring_boot.png'], ['React', 'react.png'], ['Node.js', 'nodejs.png'], ['Flask', 'flasknew.png'], ['Kafka', 'Kafka.png'], ['Git', 'git.png'], ['Linux', 'linux.png']] },
