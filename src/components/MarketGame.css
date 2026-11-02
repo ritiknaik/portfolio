@@ -1,0 +1,84 @@
+.game {
+  display: grid;
+  grid-template-columns: 1fr minmax(0, 480px);
+  gap: 56px;
+  align-items: center;
+  margin-top: 72px;
+  padding: 40px;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: var(--surface);
+}
+
+.game-text h3 { font-size: clamp(26px, 3.4vw, 36px); margin: 10px 0 12px; }
+.game-intro { color: var(--muted); max-width: 440px; }
+
+.game-status {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin: 28px 0 20px;
+  padding: 16px 0;
+  border-block: 1px solid var(--line);
+}
+.game-pnl { margin-top: 2px; font: 700 26px/1.2 var(--font-mono); font-variant-numeric: tabular-nums; }
+.game-msg { flex: 1; font: 600 15px/1.4 var(--font-head); }
+.game .up { color: var(--quant); }
+.game .down { color: var(--down); }
+
+.game-actions { display: flex; gap: 12px; }
+.trade { flex: 1; max-width: 160px; justify-content: center; font-size: 16px; }
+.trade.buy { background: color-mix(in srgb, var(--quant) 16%, transparent); border-color: var(--quant); color: var(--quant); }
+.trade.sell { background: color-mix(in srgb, var(--down) 16%, transparent); border-color: var(--down); color: var(--down); }
+.trade:disabled { opacity: 0.5; cursor: wait; transform: none; }
+
+.game-rank-title { font: 700 30px/1.2 var(--font-head); color: var(--accent); }
+.game-rank-line { margin: 4px 0 14px; color: var(--muted); }
+
+.game-progress { display: flex; gap: 5px; margin-top: 22px; }
+.game-progress i { width: 22px; height: 4px; border-radius: 2px; background: var(--line); transition: background-color 0.3s; }
+.game-progress i.up { background: var(--quant); }
+.game-progress i.down { background: var(--down); }
+
+/* Chart */
+.chart { padding: 14px 14px 10px; border: 1px solid var(--line); border-radius: 12px; background: var(--bg); }
+.chart-head { display: flex; justify-content: space-between; margin-bottom: 6px; font-size: 11px; }
+.chart svg { display: block; width: 100%; height: auto; overflow: visible; }
+.chart .grid { stroke: var(--line); stroke-dasharray: 2 4; }
+.chart .sma { fill: none; stroke: var(--accent); stroke-width: 1.5; stroke-dasharray: 4 3; opacity: 0.8; }
+
+.candle line { stroke-width: 1.2; }
+.candle.up line { stroke: var(--quant); }
+.candle.up rect { fill: var(--quant); }
+.candle.down line { stroke: var(--down); }
+.candle.down rect { fill: var(--down); }
+.candle text { font: 700 10px var(--font-mono); }
+.candle .hit { fill: var(--quant); }
+.candle .miss { fill: var(--down); }
+.candle.fresh { transform-box: fill-box; transform-origin: center; animation: candle-in 0.45s cubic-bezier(0.3, 1.4, 0.5, 1); }
+
+.next rect { fill: none; stroke: var(--muted); stroke-dasharray: 3 3; opacity: 0.6; }
+.next text { fill: var(--muted); font: 700 14px var(--font-mono); animation: blink 1.2s step-end infinite; }
+
+@keyframes candle-in { from { opacity: 0; transform: scaleY(0.2); } }
+
+@media (max-width: 860px) {
+  .game { grid-template-columns: 1fr; gap: 28px; padding: 24px; }
+  .chart { order: -1; }
+}
+@media (max-width: 480px) {
+  .game { padding: 18px; margin-top: 48px; }
+  .game-status { flex-direction: column; align-items: flex-start; gap: 6px; }
+  .trade { max-width: none; }
+}
+
+.game-scenario {
+  margin: 0 0 18px;
+  padding: 10px 14px;
+  border-left: 3px solid var(--accent);
+  border-radius: 0 8px 8px 0;
+  background: var(--bg);
+  font-size: 14.5px;
+  color: var(--muted);
+}
+.game-scenario .mono { display: block; margin-bottom: 2px; color: var(--accent); }

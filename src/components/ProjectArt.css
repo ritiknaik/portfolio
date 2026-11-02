@@ -1,0 +1,8 @@
+.art { display: block; width: 100%; height: 100%; }
+.art text { font-family: var(--font-mono); fill: var(--muted); }
+.art .art-sm { font-size: 8px; letter-spacing: 0.06em; }
+.art .art-code { font-size: 9px; fill: var(--text); }
+.art .art-md { font-size: 11px; font-weight: 500; letter-spacing: 0.08em; fill: var(--text); }
+.art .art-lg { font-size: 11px; font-weight: 500; letter-spacing: 0.06em; }
+.art .art-xl { font: 700 26px var(--font-head); }
+.art-blink { animation: blink 1s steps(1) infinite; }

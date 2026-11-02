@@ -1,0 +1,81 @@
+.modal {
+  width: min(720px, calc(100vw - 32px));
+  max-height: min(88vh, 900px);
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: var(--surface);
+  color: var(--text);
+  box-shadow: var(--shadow);
+  overflow: auto;
+  overscroll-behavior: contain;
+}
+.modal[open] { animation: modal-in 0.3s cubic-bezier(0.2, 0.8, 0.2, 1); }
+.modal::backdrop { background: rgba(12, 14, 18, 0.55); backdrop-filter: blur(3px); }
+
+.modal-top { position: relative; }
+.modal-img { aspect-ratio: 21 / 9; background: var(--surface-2); }
+.modal-img img,
+.modal-img svg { width: 100%; height: 100%; object-fit: contain; padding: 18px; }
+.modal-img svg { padding: 8px 12%; }
+.modal-close { position: absolute; top: 12px; right: 12px; background: var(--surface); }
+
+.modal-body { padding: 28px 32px 28px; }
+.modal-kind { margin: 4px 0 8px; }
+.modal-body h3 { font-size: clamp(22px, 3vw, 28px); line-height: 1.2; }
+.modal-paper { margin-top: 6px; font: italic 15px var(--font-body); color: var(--muted); }
+.modal-authors { margin-top: 4px; font-size: 14px; color: var(--muted); }
+.modal-summary { margin: 18px 0 22px; font-size: 16.5px; }
+
+.modal-body h4 { margin-bottom: 10px; }
+.modal-points { margin: 0 0 22px; padding-left: 18px; color: var(--muted); }
+.modal-points li { padding-left: 4px; }
+.modal-points li + li { margin-top: 8px; }
+.modal-points li::marker { color: var(--accent); }
+
+.modal-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 22px; }
+.modal-tags span {
+  padding: 4px 10px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--bg);
+  font: 12px var(--font-mono);
+  color: var(--muted);
+}
+
+.modal-body .modal-note { margin-bottom: 22px; text-transform: none; }
+
+.modal-foot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+}
+.modal-links { display: flex; flex-wrap: wrap; gap: 10px; }
+.modal-links .btn { padding: 9px 16px; font-size: 14px; }
+.modal-nav { display: flex; align-items: center; gap: 10px; margin-left: auto; }
+
+@keyframes modal-in { from { opacity: 0; transform: translateY(16px) scale(0.98); } }
+
+/* Phones: becomes a bottom sheet */
+@media (max-width: 600px) {
+  .modal {
+    width: 100vw;
+    max-width: 100vw;
+    max-height: 92vh;
+    margin: auto 0 0;
+    border-radius: 18px 18px 0 0;
+    border-bottom: none;
+  }
+  .modal[open] { animation-name: sheet-in; }
+  .modal-img { aspect-ratio: 16 / 9; }
+  .modal-body { padding: 22px 20px 28px; }
+  .modal-links { width: 100%; }
+  .modal-links .btn { flex: 1; justify-content: center; }
+  .modal-nav { margin: 0 auto; }
+}
+
+@keyframes sheet-in { from { transform: translateY(40px); opacity: 0; } }

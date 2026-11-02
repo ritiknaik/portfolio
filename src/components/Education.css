@@ -1,0 +1,43 @@
+.edu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+.edu-col { margin-bottom: 16px; }
+
+.edu-list { display: grid; gap: 14px; margin: 0; padding: 0; list-style: none; }
+
+/* Each entry is a card with an accent rail so the key facts stand out */
+.edu-item {
+  position: relative;
+  padding: 20px 22px 20px 26px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  transition: transform 0.25s, border-color 0.25s;
+}
+.edu-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 18px;
+  bottom: 18px;
+  width: 3px;
+  border-radius: 0 3px 3px 0;
+  background: var(--accent);
+}
+.edu-item:hover { transform: translateX(4px); border-color: var(--muted); }
+
+.edu-head { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 8px; }
+.edu-badge {
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--quant) 18%, transparent);
+  color: var(--quant);
+  font: 700 13px var(--font-head);
+  white-space: nowrap;
+}
+
+.edu-item h3 { font-size: 20px; line-height: 1.25; }
+.edu-place { margin-top: 4px; font: 600 15px var(--font-head); color: var(--accent); }
+.edu-note { margin-top: 6px; font-size: 14.5px; color: var(--muted); }
+
+@media (max-width: 800px) {
+  .edu-grid { grid-template-columns: 1fr; }
+}

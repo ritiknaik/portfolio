@@ -1,0 +1,134 @@
+.lenses {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+}
+
+/* Graphic card on the right, panels scroll on the left */
+.stage {
+  grid-column: 2;
+  grid-row: 1;
+  position: sticky;
+  top: calc(var(--nav-h) + 6vh);
+  height: calc(88vh - var(--nav-h));
+  display: flex;
+  align-items: center;
+}
+
+.stage-card {
+  width: 100%;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--surface-2);
+  box-shadow: var(--shadow);
+}
+
+/* Browser-style tab strip: the active tab merges into the body below it */
+.tabs { display: flex; gap: 2px; padding: 10px 10px 0; }
+.tab {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 9px 10px;
+  border: none;
+  border-radius: 10px 10px 0 0;
+  background: transparent;
+  color: var(--muted);
+  font: 600 13px var(--font-head);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+.tab:hover { color: var(--text); }
+.tab i { flex: none; width: 7px; height: 7px; border-radius: 50%; background: var(--c); opacity: 0.5; transition: opacity 0.3s; }
+.tab.on { background: var(--surface); color: var(--text); }
+.tab.on i { opacity: 1; }
+
+.tab-body { padding: 14px 20px 18px; background: var(--surface); }
+.tab-body .tab-path { margin-bottom: 4px; text-transform: none; }
+.caret-sm {
+  display: inline-block;
+  width: 7px;
+  height: 13px;
+  margin-left: 2px;
+  vertical-align: -2px;
+  background: var(--c);
+  animation: blink 1s steps(1) infinite;
+}
+
+.scenes { display: block; width: 100%; height: auto; }
+.scenes text { font: 9.5px var(--font-mono); fill: var(--muted); letter-spacing: 0.05em; }
+.scenes text.on-fill { fill: var(--text); font-weight: 500; }
+
+.scene { opacity: 0; transition: opacity 0.5s; }
+.scene.on { opacity: 1; }
+
+.scenes .draw { fill: none; stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 1.1s cubic-bezier(0.6, 0, 0.2, 1) var(--d, 0s); }
+.scene.on .draw { stroke-dashoffset: 0; }
+
+.scenes .pop {
+  opacity: 0;
+  transform: scale(0.5);
+  transform-box: fill-box;
+  transform-origin: center;
+  transition: opacity 0.4s var(--d, 0s), transform 0.5s cubic-bezier(0.3, 1.4, 0.5, 1) var(--d, 0s);
+}
+.scene.on .pop { opacity: 1; transform: none; }
+
+/* Panels */
+.panels { grid-column: 1; grid-row: 1; }
+
+.panel {
+  min-height: 78vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  opacity: 0.3;
+  transition: opacity 0.5s;
+}
+.panel.active { opacity: 1; }
+
+.panel-num { color: var(--c); margin-bottom: 12px; }
+.panel h3 { font-size: clamp(28px, 3.4vw, 40px); line-height: 1.15; margin-bottom: 16px; }
+.panel h3 em { color: var(--c); }
+.panel-text { color: var(--muted); font-size: 17px; max-width: 480px; margin-bottom: 24px; }
+
+.proof { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+.proof li {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 15px;
+}
+.proof li .mono { white-space: nowrap; font-size: 11px; }
+
+/* On small screens each panel carries its own graphic instead of a sticky card */
+.panel-scene { display: none; }
+
+@media (max-width: 860px) {
+  .lenses { grid-template-columns: 1fr; gap: 0; }
+  .stage { display: none; }
+  .panel { min-height: 0; padding: 32px 0; }
+  .panel-scene {
+    display: block;
+    max-width: 560px;
+    margin-bottom: 24px;
+    padding: 12px;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: var(--surface);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scenes .draw { stroke-dashoffset: 0; }
+  .scenes .pop { opacity: 1; transform: none; }
+}

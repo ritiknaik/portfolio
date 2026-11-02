@@ -1,0 +1,39 @@
+.socials { display: flex; gap: 10px; }
+
+.social {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: var(--surface);
+  color: var(--muted);
+  transition: color 0.2s, border-color 0.2s, transform 0.2s, background-color 0.2s;
+}
+.social svg { width: 19px; height: 19px; }
+.social:hover { color: var(--accent); border-color: var(--accent); transform: translateY(-2px); }
+
+.socials-lg .social { width: 56px; height: 56px; }
+.socials-lg .social svg { width: 23px; height: 23px; }
+
+/* Tooltip */
+.social::after {
+  content: attr(data-tip);
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  padding: 4px 8px;
+  border-radius: 6px;
+  background: var(--text);
+  color: var(--bg);
+  font: 600 12px var(--font-head);
+  white-space: nowrap;
+  opacity: 0;
+  transform: translate(-50%, 4px);
+  pointer-events: none;
+  transition: opacity 0.2s, transform 0.2s;
+}
+.social:hover::after,
+.social:focus-visible::after { opacity: 1; transform: translate(-50%, 0); }

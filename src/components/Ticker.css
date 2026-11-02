@@ -1,0 +1,21 @@
+.ticker {
+  overflow: hidden;
+  white-space: nowrap;
+  border-block: 1px solid var(--line);
+  background: var(--surface);
+}
+
+.ticker-track { display: inline-flex; animation: ticker 45s linear infinite; }
+.ticker:hover .ticker-track { animation-play-state: paused; }
+
+.ticker span {
+  padding: 11px 22px;
+  border-right: 1px solid var(--line);
+  font: 12px var(--font-mono);
+  color: var(--muted);
+  letter-spacing: 0.04em;
+}
+.ticker b { font-weight: 500; color: var(--text); }
+.ticker b.up { color: var(--quant); }
+
+@keyframes ticker { to { transform: translateX(-50%); } }
