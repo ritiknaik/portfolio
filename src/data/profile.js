@@ -113,9 +113,9 @@ export const experience = [
       {
         label: 'Critical Data Elements (CDE)',
         points: [
-          'Led a team of *six engineers* building a greenfield microservices platform; pitched features to business stakeholders and presented the architecture to the business’s Chief Architect.',
-          'Designed a multi-stage workflow state machine decoupled over Kafka, with retries and dead-letter queues for fault tolerance.',
-          'Built Harness CI/CD for zero-downtime OpenShift rollouts, moving releases from *quarterly to bi-weekly* across *400+ upstream feeds*.',
+          'Led a team of *six engineers* architecting a greenfield microservices platform in Agile sprints; pitched features to business stakeholders and presented the design to the business’s Chief Architect.',
+          'Built it with Java, Spring Boot, Kafka and React + TypeScript using agentic AI coding tools with MCP servers, while reviewing AI-generated code and owning Git, code reviews and JUnit / Jest tests.',
+          'Designed *20+ REST APIs* and a cross-system database schema with strict validation, standardised error handling and audit triggers, reaching *~100% audit coverage*.',
         ],
       },
       {
@@ -126,7 +126,7 @@ export const experience = [
         ],
       },
     ],
-    tags: ['Kafka', 'OpenShift', 'Harness CI/CD', 'OAuth2 / OIDC', 'Python', 'Pandas', 'OneTick', 'PostgreSQL', 'Splunk'],
+    tags: ['Java', 'Spring Boot', 'Kafka', 'React', 'TypeScript', 'OpenShift', 'Harness CI/CD', 'Python', 'Pandas', 'OneTick', 'PostgreSQL'],
   },
   {
     role: 'Intern Analyst',

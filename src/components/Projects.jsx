@@ -33,7 +33,8 @@ function Card({ project, onOpen }) {
 }
 
 export default function Projects() {
-  const [filter, setFilter] = useState('all');
+  // Phones and tablets start on SWE so the list stays short; wider screens show everything
+  const [filter, setFilter] = useState(() => (window.matchMedia('(max-width: 960px)').matches ? 'swe' : 'all'));
   const [openIndex, setOpenIndex] = useState(null);
   const shown = projects.filter((p) => filter === 'all' || p.lenses.includes(filter));
 
