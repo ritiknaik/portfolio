@@ -256,6 +256,30 @@ export const projects = [
     },
   },
   {
+    title: 'This Portfolio',
+    art: 'portfolio',
+    text: 'Single-page portfolio in React with day and night themes, hand-drawn SVG graphics and a market mini-game.',
+    lenses: ['swe', 'design'],
+    stack: 'Vite · React · SVG',
+    link: { label: 'GitHub', href: 'https://github.com/ritiknaik/portfolio' },
+    details: {
+      kind: 'Personal project · 2026',
+      summary: 'This very site. A rebuild of an older multi-page portfolio into one fast, static page with no backend, designed and drawn by hand and deployed to both GitHub Pages and Netlify from the same build.',
+      highlights: [
+        'Vite and React with plain CSS custom properties, so the day and night themes are a single attribute swap',
+        'Every project cover and lens scene is a hand-written SVG coloured with theme tokens, so each one works in both themes',
+        'Scroll-driven navigation with an IntersectionObserver scrollspy, reveal animations and a sticky browser-tab card',
+        'Beat the Market mini-game with 12 simulated market scenarios, from bull runs to flash crashes',
+        'All content lives in one data file, and a GitHub Actions workflow builds and deploys on every push',
+      ],
+      tags: ['React', 'Vite', 'SVG', 'CSS', 'GitHub Actions', 'Responsive design'],
+      links: [
+        { label: 'View on GitHub', href: 'https://github.com/ritiknaik/portfolio' },
+        { label: 'Live site', href: 'https://ritiknaik.github.io/portfolio/' },
+      ],
+    },
+  },
+  {
     title: 'MRThread',
     text: 'Multithreading library in C with one-one and many-one implementations.',
     art: 'mrthread',

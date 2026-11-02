@@ -232,7 +232,43 @@ function Impressions() {
   );
 }
 
+// This site: one browser window, night theme on the left and day theme on the right
+function Portfolio() {
+  const half = [
+    { x: 36, ink: '#e4e1da', accent: '#6fb1ff' },
+    { x: 172, ink: '#2b2e34', accent: '#2f74e0' },
+  ];
+  const lensColors = ['#7fb0f0', '#b29cec', '#74c4a0', '#e2b669', '#ec987c'];
+  return (
+    <>
+      <rect x="24" y="16" width="272" height="138" rx="10" fill="var(--surface)" stroke="var(--line)" />
+      {['#ec987c', '#e2b669', '#74c4a0'].map((c, i) => <circle key={c} cx={38 + i * 12} cy="28" r="3.5" fill={c} />)}
+      <rect x="90" y="22" width="140" height="12" rx="6" fill="var(--surface-2)" />
+      <T x="160" y="31" textAnchor="middle" className="art-sm">ritiknaik.github.io</T>
+      <path d="M24.5 40 H160 V153.5 H34.5 a10 10 0 0 1 -10 -10 Z" fill="#1b1e24" />
+      <path d="M160 40 H295.5 V143.5 a10 10 0 0 1 -10 10 H160 Z" fill="#eeebe5" />
+      {half.map(({ x, ink, accent }) => (
+        <g key={x}>
+          <rect x={x} y="58" width="54" height="9" rx="4.5" fill={ink} fillOpacity="0.85" />
+          <rect x={x} y="73" width="40" height="7" rx="3.5" fill={accent} />
+          <rect x={x} y="88" width="62" height="5" rx="2.5" fill={ink} fillOpacity="0.3" />
+          <rect x={x} y="98" width="50" height="5" rx="2.5" fill={ink} fillOpacity="0.3" />
+          {lensColors.map((c, i) => <circle key={c} cx={x + 4 + i * 12} cy="122" r="4" fill={c} />)}
+          <path d={`M${x + 82} 112 V76 a16 16 0 0 1 32 0 V112 Z`} fill={accent} fillOpacity="0.22" />
+          <circle cx={x + 98} cy="82" r="8" fill={ink} fillOpacity="0.7" />
+          <path d={`M${x + 84} 112 c2 -14 26 -14 28 0 Z`} fill={ink} fillOpacity="0.7" />
+        </g>
+      ))}
+      <rect x="142" y="134" width="36" height="16" rx="8" fill="var(--surface)" stroke="var(--line)" />
+      <circle cx="152" cy="142" r="5" fill="#6fb1ff" />
+      <circle cx="168" cy="142" r="5" fill="none" stroke="#2f74e0" strokeWidth="1.5" />
+      <T x="24" y="172" className="art-sm">VITE · REACT · SVG · DAY / NIGHT</T>
+    </>
+  );
+}
+
 const ART = {
+  portfolio: Portfolio,
   prefill: Prefill,
   narratives: Narratives,
   greenfield: Greenfield,
