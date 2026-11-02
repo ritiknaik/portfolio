@@ -131,45 +131,11 @@
 @media (max-width: 960px) {
   .hero-grid { grid-template-columns: 1.5fr 1fr; gap: 32px; }
   .portrait { max-width: 300px; }
-  /* "Open to roles" pill: slightly lighter surface with a live status dot */
-.open-to {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 22px;
-  padding: 7px 14px 7px 12px;
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  background: color-mix(in srgb, var(--surface-2) 80%, var(--text) 6%);
-  font: 600 14px var(--font-head);
-  text-decoration: none;
-  transition: border-color 0.2s, transform 0.2s;
-}
-.open-to:hover { border-color: var(--quant); transform: translateY(-1px); }
-.open-to i {
-  position: relative;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--quant);
-}
-.open-to i::after {
-  content: '';
-  position: absolute;
-  inset: -4px;
-  border-radius: 50%;
-  border: 2px solid var(--quant);
-  animation: ping 1.8s ease-out infinite;
-}
-.open-to span { color: var(--muted); transition: transform 0.2s; }
-.open-to:hover span { transform: translateX(3px); }
-@keyframes ping { from { opacity: 0.8; transform: scale(0.6); } to { opacity: 0; transform: scale(1.6); } }
-
-.tagline { min-height: 2.6em; }
+  .tagline { min-height: 2.6em; }
 }
 
 @media (max-width: 640px) {
   .hero { padding-top: calc(var(--nav-h) + 24px); }
   .hero-grid { grid-template-columns: 1fr; gap: 24px; }
-  .portrait { order: -1; max-width: 220px; justify-self: start; }
+  .portrait { order: -1; max-width: 220px; justify-self: center; }
 }
