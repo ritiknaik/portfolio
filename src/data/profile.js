@@ -252,7 +252,7 @@ export const projects = [
         'Harness CI/CD to OpenShift with zero-downtime rollouts, taking releases from quarterly to bi-weekly',
       ],
       tags: ['Microservices', 'Kafka', 'OpenShift', 'OAuth2 / OIDC', 'Harness'],
-      note: 'Internal project. Code and further details are confidential.',
+      note: 'Internal project.',
     },
   },
   {
@@ -407,7 +407,7 @@ export const skills = [
 // `badge` is the highlighted result shown next to each entry.
 export const education = [
   { dates: '2026 — present', title: 'MS, Computer Science', place: 'Texas A&M University, College Station', badge: 'In progress' },
-  { dates: '2019 — 2023', title: 'B.Tech, Computer Engineering', place: 'College of Engineering, Pune', note: 'Honours in Data Science', badge: 'CGPA 9.08' },
+  { dates: '2019 — 2023', title: 'B.Tech, Computer Engineering', place: 'College of Engineering, Pune', note: 'Honors in Data Science', badge: 'CGPA 9.08' },
   { dates: '2017 — 2019', title: 'Junior College (Science)', place: 'Pace Junior Science College', badge: '91.38%' },
 ];
 
