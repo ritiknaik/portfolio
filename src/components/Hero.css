@@ -135,13 +135,14 @@
 
 /* Phones: everything down to the social icons fits on the first screen */
 @media (max-width: 640px) {
-  .hero { padding-top: calc(var(--nav-h) + 12px); }
+  .hero { min-height: 0; padding-top: calc(var(--nav-h) + 12px); }
   .hero-grid { grid-template-columns: 1fr; gap: 12px; }
-  .portrait { order: -1; max-width: 150px; justify-self: center; }
+  .portrait { order: -1; max-width: 220px; justify-self: center; }
   .open-to { margin-bottom: 4px; }
   .eyebrow { display: none; }
   .hero h1 { margin: 10px 0 6px; }
-  .tagline { margin-bottom: 12px; }
+  /* Sized so the longest phrase stays on one line, so only one line is reserved */
+  .tagline { font-size: min(20px, 5.3vw); min-height: 1.3em; margin-bottom: 12px; }
   .bio { font-size: 16px; margin-bottom: 20px; }
   .cta { gap: 10px; }
 }

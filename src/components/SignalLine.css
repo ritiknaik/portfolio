@@ -37,3 +37,7 @@
   .signal path { stroke-dashoffset: 0; }
   .signal-labels a { opacity: 1; }
 }
+
+@media (max-width: 640px) {
+  .signal { margin-top: 32px; }
+}

@@ -112,8 +112,7 @@
 
 /* Phone / tablet only: tab strip, swipeable panels and prev / next controls */
 .panel-scene,
-.m-tabs,
-.carousel-nav { display: none; }
+.m-tabs { display: none; }
 
 @media (max-width: 860px) {
   .lenses { display: block; }
@@ -128,23 +127,7 @@
   }
   .m-tabs .tab { justify-content: center; gap: 6px; padding: 8px 4px; border-radius: 9px; font-size: 12.5px; }
 
-  /* Bleeds to the screen edges so the next card peeks in */
-  .panels {
-    position: relative;
-    display: flex;
-    gap: 14px;
-    margin: 0 -24px;
-    padding: 0 24px 4px;
-    overflow-x: auto;
-    overscroll-behavior-x: contain;
-    scroll-snap-type: x mandatory;
-    scroll-padding-inline: 24px;
-    scrollbar-width: none;
-  }
-  .panels::-webkit-scrollbar { display: none; }
-
   .panel {
-    flex: 0 0 calc(100% - 36px);
     min-height: 0;
     justify-content: flex-start;
     padding: 16px 18px 6px;
@@ -152,7 +135,6 @@
     border-radius: var(--radius);
     background: var(--surface);
     opacity: 1;
-    scroll-snap-align: start;
   }
   .panel h3 { font-size: 24px; margin-bottom: 10px; }
   .panel-text { font-size: 15.5px; margin-bottom: 16px; }
@@ -167,22 +149,6 @@
     border-radius: 10px;
     background: var(--surface-2);
   }
-
-  .carousel-nav { display: flex; align-items: center; justify-content: center; gap: 16px; margin-top: 18px; }
-  .carousel-nav .icon-btn { width: 40px; height: 40px; border-radius: 50%; font: 400 22px/1 var(--font-head); }
-  .carousel-nav .icon-btn:disabled { opacity: 0.35; cursor: default; }
-  .dots { display: flex; gap: 8px; }
-  .dots button {
-    width: 8px;
-    height: 8px;
-    padding: 0;
-    border: none;
-    border-radius: 4px;
-    background: var(--line);
-    cursor: pointer;
-    transition: width 0.3s, background-color 0.3s;
-  }
-  .dots button.on { width: 22px; background: var(--c); }
 }
 
 @media (prefers-reduced-motion: reduce) {

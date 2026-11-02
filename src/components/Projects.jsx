@@ -1,6 +1,9 @@
 import { useState } from 'react';
 import SectionHead from './SectionHead';
 import ProjectModal from './ProjectModal';
+import CarouselNav from './CarouselNav';
+import useCarousel from '../hooks/useCarousel';
+import useMediaQuery from '../hooks/useMediaQuery';
 import { Thumb, LensTags } from './ProjectParts';
 import { lenses, projects } from '../data/profile';
 import './Projects.css';
@@ -32,6 +35,20 @@ function Card({ project, onOpen }) {
   );
 }
 
+// Grid on tablets and up, swipeable carousel on phones
+function CardDeck({ items, onOpen }) {
+  const phone = useMediaQuery('(max-width: 640px)');
+  const { ref, index, goTo, onScroll } = useCarousel(items.length);
+  return (
+    <>
+      <div className={`cards ${phone ? 'carousel-track' : ''}`} ref={ref} onScroll={phone ? onScroll : undefined}>
+        {items.map((p, i) => <Card key={p.title} project={p} onOpen={() => onOpen(i)} />)}
+      </div>
+      {phone && items.length > 1 && <CarouselNav index={index} count={items.length} goTo={goTo} />}
+    </>
+  );
+}
+
 export default function Projects() {
   // Phones and tablets start on SWE so the list stays short; wider screens show everything
   const [filter, setFilter] = useState(() => (window.matchMedia('(max-width: 960px)').matches ? 'swe' : 'all'));
@@ -56,9 +73,7 @@ export default function Projects() {
             </button>
           ))}
         </div>
-        <div className="cards">
-          {shown.map((p, i) => <Card key={p.title} project={p} onOpen={() => setOpenIndex(i)} />)}
-        </div>
+        <CardDeck key={filter} items={shown} onOpen={setOpenIndex} />
       </div>
       <ProjectModal
         projects={shown}

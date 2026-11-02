@@ -1,0 +1,35 @@
+/* Sections render the nav and add .carousel-track only at the widths where they use a carousel */
+.carousel-nav { display: flex; align-items: center; justify-content: center; gap: 16px; margin-top: 18px; }
+
+.carousel-nav .icon-btn { width: 40px; height: 40px; border-radius: 50%; font: 400 22px/1 var(--font-head); }
+.carousel-nav .icon-btn:disabled { opacity: 0.35; cursor: default; }
+.carousel-count { min-width: 56px; text-align: center; }
+
+.dots { display: flex; gap: 8px; }
+.dots button {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border: none;
+  border-radius: 4px;
+  background: var(--line);
+  cursor: pointer;
+  transition: width 0.3s, background-color 0.3s;
+}
+.dots button.on { width: 22px; background: var(--c); }
+
+/* Shared track: bleeds to the screen edges so the next slide peeks in */
+.carousel-track {
+  position: relative;
+  display: flex;
+  gap: 14px;
+  margin: 0 -24px;
+  padding: 0 24px 4px;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scroll-padding-inline: 24px;
+  scrollbar-width: none;
+}
+.carousel-track::-webkit-scrollbar { display: none; }
+.carousel-track > * { flex: 0 0 calc(100% - 36px); scroll-snap-align: start; }

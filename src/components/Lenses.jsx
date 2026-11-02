@@ -1,9 +1,10 @@
-import { useRef, useState } from 'react';
 import Emph from './Emph';
 import SectionHead from './SectionHead';
 import LensScenes from './LensScenes';
+import CarouselNav from './CarouselNav';
 import useScrollSpy from '../hooks/useScrollSpy';
 import useMediaQuery from '../hooks/useMediaQuery';
+import useCarousel from '../hooks/useCarousel';
 import { lenses } from '../data/profile';
 import './Lenses.css';
 
@@ -34,29 +35,10 @@ export default function Lenses() {
   // Desktop: panels scroll past a sticky card. Phones and tablets: panels become a swipeable carousel.
   const carousel = useMediaQuery('(max-width: 860px)');
   const activeId = useScrollSpy(IDS, '-45% 0px -45% 0px');
-  const [slide, setSlide] = useState(0);
-  const track = useRef(null);
+  const { ref, index: slide, goTo, onScroll } = useCarousel(lenses.length);
 
   const index = carousel ? slide : Math.max(0, IDS.indexOf(activeId));
   const lens = lenses[index];
-
-  const goTo = (i) => {
-    const panels = track.current.children;
-    const target = Math.max(0, Math.min(lenses.length - 1, i));
-    track.current.scrollTo({ left: panels[target].offsetLeft - panels[0].offsetLeft, behavior: 'smooth' });
-    setSlide(target);
-  };
-
-  // Whichever panel's left edge is closest to the scroll position is the current slide
-  const onScroll = () => {
-    const { scrollLeft, children } = track.current;
-    const base = children[0].offsetLeft;
-    let nearest = 0;
-    for (let i = 1; i < children.length; i += 1) {
-      if (Math.abs(children[i].offsetLeft - base - scrollLeft) < Math.abs(children[nearest].offsetLeft - base - scrollLeft)) nearest = i;
-    }
-    if (nearest !== slide) setSlide(nearest);
-  };
 
   return (
     <section className="section" id="work">
@@ -75,7 +57,7 @@ export default function Lenses() {
 
           <Tabs index={index} onSelect={goTo} className="m-tabs" />
 
-          <div className="panels" ref={track} onScroll={carousel ? onScroll : undefined}>
+          <div className={`panels ${carousel ? 'carousel-track' : ''}`} ref={ref} onScroll={carousel ? onScroll : undefined}>
             {lenses.map((l, i) => (
               <article
                 key={l.key}
@@ -98,22 +80,14 @@ export default function Lenses() {
             ))}
           </div>
 
-          <div className="carousel-nav">
-            <button type="button" className="icon-btn" onClick={() => goTo(index - 1)} disabled={index === 0} aria-label="Previous">‹</button>
-            <div className="dots">
-              {lenses.map((l, i) => (
-                <button
-                  key={l.key}
-                  type="button"
-                  className={i === index ? 'on' : ''}
-                  style={{ '--c': `var(--${l.key})` }}
-                  onClick={() => goTo(i)}
-                  aria-label={`Show ${l.name}`}
-                />
-              ))}
-            </div>
-            <button type="button" className="icon-btn" onClick={() => goTo(index + 1)} disabled={index === lenses.length - 1} aria-label="Next">›</button>
-          </div>
+          {carousel && (
+            <CarouselNav
+              index={index}
+              count={lenses.length}
+              goTo={goTo}
+              dots={lenses.map((l) => ({ key: l.key, label: l.name, color: `var(--${l.key})` }))}
+            />
+          )}
         </div>
       </div>
     </section>
