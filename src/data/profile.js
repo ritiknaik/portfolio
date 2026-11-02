@@ -413,7 +413,7 @@ export const education = [
 ];
 
 export const leadership = [
-  { dates: '2022 — 2023', title: 'Secretary', place: 'DSAI Club, COEP', note: 'Ran research-driven events, expert talks and inter-college competitions' },
+  { dates: '2022 — 2023', title: 'Secretary', place: 'DSAI Club, COEP', note: 'Ran research-driven events, expert talks and inter-college hackathons' },
   { dates: '2021 — 2022', title: 'ML & Python Head', place: 'ASCI, COEP', note: 'Led ML / DL projects and industry sessions' },
   { dates: '2020 — 2022', title: 'Design Coordinator', place: 'Impressions, COEP', note: 'Posters, brochures, merch and video for the cultural fest' },
 ];

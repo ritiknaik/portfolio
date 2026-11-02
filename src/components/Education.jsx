@@ -17,18 +17,20 @@ function Entry({ item }) {
 }
 
 export default function Education() {
+  // Both columns share one set of grid rows, so side-by-side cards match in height
+  const rows = Math.max(education.length, leadership.length);
   return (
     <section className="section" id="education">
       <div className="wrap">
         <SectionHead index="04" label="Education & leadership" title="Learning and *leading*." />
         <div className="edu-grid reveal">
-          <div>
+          <div style={{ '--rows': rows + 1 }}>
             <h3 className="edu-col mono">Education</h3>
-            <ul className="edu-list">{education.map((e) => <Entry key={e.title} item={e} />)}</ul>
+            <ul className="edu-list" style={{ '--rows': rows }}>{education.map((e) => <Entry key={e.title} item={e} />)}</ul>
           </div>
-          <div>
+          <div style={{ '--rows': rows + 1 }}>
             <h3 className="edu-col mono">Leadership</h3>
-            <ul className="edu-list">{leadership.map((e) => <Entry key={e.title} item={e} />)}</ul>
+            <ul className="edu-list" style={{ '--rows': rows }}>{leadership.map((e) => <Entry key={e.title} item={e} />)}</ul>
           </div>
         </div>
       </div>
