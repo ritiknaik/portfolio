@@ -9,7 +9,9 @@ export default function Contact() {
         <div className="wrap reveal">
           <p className="mono">07 — Contact</p>
           <h2>Bring the problem.<br /><em>I'll bring the code.</em></h2>
-          <p className="contact-text">Open to SWE, AI and quant roles, research collaborations, and side projects worth building.</p>
+          <p className="contact-text">
+            My inbox is always open. Bring an opportunity, a wild idea or just a hello, and let&apos;s talk over Zoom or coffee.
+          </p>
           <div className="cta contact-cta">
             <a className="btn primary" href={`mailto:${person.email}`}>Say hello</a>
             <a className="btn" href={person.resume} target="_blank" rel="noopener noreferrer">Résumé ↗</a>
